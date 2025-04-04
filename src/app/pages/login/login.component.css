@@ -1,0 +1,64 @@
+/* login.component.css */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  .logo {
+    width: 200px;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .login-btn {
+    background-color: #00AEEF;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  .register-link, .help-link {
+    margin-top: 10px;
+    color: #00AEEF;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .register-link:hover, .help-link:hover {
+    text-decoration: underline;
+  }
+  
