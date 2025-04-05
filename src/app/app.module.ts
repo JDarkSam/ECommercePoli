@@ -17,6 +17,7 @@ import { ModificacionUsersComponent } from './pages/modificacion-users/modificac
 import { CrearUserAdminComponent } from './pages/crear-user-admin/crear-user-admin.component';
 import { AdminProductosComponent } from './pages/admin-productos/admin-productos.component';
 import { CarritoCompraComponent } from './pages/carrito-compra/carrito-compra.component';
+import { OrdenCompraComponent } from './pages/orden-compra/orden-compra.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CarritoCompraComponent } from './pages/carrito-compra/carrito-compra.co
     ModificacionUsersComponent,
     CrearUserAdminComponent,
     AdminProductosComponent,
-    CarritoCompraComponent
+    CarritoCompraComponent,
+    OrdenCompraComponent
   ],
   imports: [
     BrowserModule,

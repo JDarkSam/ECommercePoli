@@ -1,0 +1,53 @@
+.container {
+    font-family: sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .banner-image {
+    max-width: 300px; /* Ajusta el ancho máximo según tus necesidades */
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+  }
+  
+  .order-details {
+    border: 1px solid #ddd;
+    padding: 20px;
+  }
+  
+  .order-details h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .order-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .item-label {
+    font-weight: bold;
+  }
+  
+  .item-value {
+    text-align: right;
+  }
+  
+  .order-item.total {
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+    margin-top: 10px;
+  }
+  
+  .print-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+  }
