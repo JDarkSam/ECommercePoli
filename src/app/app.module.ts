@@ -14,6 +14,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { AdminUsersComponent } from './pages/admin-users/admin-users.component';
 import { CreacionProductosComponent } from './pages/creacion-productos/creacion-productos.component';
 import { ModificacionUsersComponent } from './pages/modificacion-users/modificacion-users.component';
+import { CrearUserAdminComponent } from './pages/crear-user-admin/crear-user-admin.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ModificacionUsersComponent } from './pages/modificacion-users/modificac
     HomeComponent,
     AdminUsersComponent,
     CreacionProductosComponent,
-    ModificacionUsersComponent
+    ModificacionUsersComponent,
+    CrearUserAdminComponent
   ],
   imports: [
     BrowserModule,
