@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="header">
+        <img src="banner.png" alt="Gigamarket Banner" class="banner">
+    </div>
+
+    <div class="content">
+        <div class="sidebar">
+            <ul>
+                <li>Navegación</li>
+                <li>Administración de Usuarios</li>
+                <li>Administración de Productos</li>
+                <li>Informe de Ventas</li>
+            </ul>
+        </div>
+
+        <div class="data-grid">
+            <div class="title-bar">
+                <h2>Mantenimiento Productos</h2>
+                <button class="add-product">
+                    <i class="fas fa-database"></i> Agregar Producto
+                </button>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre Producto</th>
+                        <th>Precio Unidad</th>
+                        <th>Descripción</th>
+                        <th>Imagen</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of products">
+                        <td>{{ product.id }}</td>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.price | currency:'USD' }}</td>
+                        <td>{{ product.description }}</td>
+                        <td>
+                            <i class="fas fa-check"></i>
+                        </td>
+                        <td>
+                            <i class="fas fa-edit"></i>
+                            <i class="fas fa-trash"></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
