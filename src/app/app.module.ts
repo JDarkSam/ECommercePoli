@@ -11,13 +11,17 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
+import { AdminUsersComponent } from './pages/admin-users/admin-users.component';
+import { CreacionProductosComponent } from './creacion-productos/creacion-productos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistroComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    AdminUsersComponent,
+    CreacionProductosComponent
   ],
   imports: [
     BrowserModule,
@@ -27,8 +31,8 @@ import { HomeComponent } from './pages/home/home.component';
     MatInputModule,
     MatButtonModule,
     MatFormFieldModule,
-    FormsModule
-  ],
+    FormsModule,
+],
   providers: [],
   bootstrap: [AppComponent]
 })

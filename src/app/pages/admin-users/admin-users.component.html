@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="header">
+      <img src="banner.png" alt="Gigamarket Banner" class="banner">
+  </div>
+
+  <div class="content">
+      <div class="sidebar">
+          <ul>
+              <li>Navegación</li>
+              <li>Administración de Usuarios</li>
+              <li>Administración de Productos</li>
+              <li>Informe de Ventas</li>
+          </ul>
+      </div>
+
+      <div class="data-grid">
+          <div class="title-bar">
+              <h2>Mantenimiento Usuarios</h2>
+              <button class="create-user">
+                  <i class="fas fa-user-plus"></i> Crear Usuario Admin
+              </button>
+          </div>
+
+          <table>
+              <thead>
+                  <tr>
+                      <th>Id</th>
+                      <th>Nombre Completo</th>
+                      <th>Usuario</th>
+                      <th>Email</th>
+                      <th>Role</th>
+                      <th>Acciones</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let user of users">
+                      <td>{{ user.id }}</td>
+                      <td>{{ user.name }}</td>
+                      <td>{{ user.username }}</td>
+                      <td>{{ user.email }}</td>
+                      <td>{{ user.role }}</td>
+                      <td>
+                          <i class="fas fa-edit"></i>
+                          <i class="fas fa-user-cog"></i>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>
