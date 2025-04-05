@@ -12,8 +12,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AdminUsersComponent } from './pages/admin-users/admin-users.component';
-import { CreacionProductosComponent } from './creacion-productos/creacion-productos.component';
-import { ModificacionUsersComponent } from './modificacion-users/modificacion-users.component';
+import { CreacionProductosComponent } from './pages/creacion-productos/creacion-productos.component';
+import { ModificacionUsersComponent } from './pages/modificacion-users/modificacion-users.component';
 
 @NgModule({
   declarations: [
