@@ -7,8 +7,8 @@
       <div class="sidebar">
           <ul>
               <li>Navegación</li>
-              <li>Administración de Usuarios</li>
-              <li>Administración de Productos</li>
+              <li routerLink="/admin-users">Administración de Usuarios</li>
+              <li routerLink="/admin-productos">Administración de Productos</li>
               <li>Informe de Ventas</li>
           </ul>
       </div>
@@ -16,7 +16,7 @@
       <div class="data-grid">
           <div class="title-bar">
               <h2>Mantenimiento Usuarios</h2>
-              <button class="create-user">
+              <button class="create-user" routerLink="/crea-user-admin">
                   <i class="fas fa-user-plus"></i> Crear Usuario Admin
               </button>
           </div>

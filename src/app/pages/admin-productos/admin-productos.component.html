@@ -7,8 +7,8 @@
         <div class="sidebar">
             <ul>
                 <li>Navegación</li>
-                <li>Administración de Usuarios</li>
-                <li>Administración de Productos</li>
+                <li routerLink="/admin-users">Administración de Usuarios</li>
+                <li routerLink="/admin-productos">Administración de Productos</li>
                 <li>Informe de Ventas</li>
             </ul>
         </div>
@@ -16,7 +16,7 @@
         <div class="data-grid">
             <div class="title-bar">
                 <h2>Mantenimiento Productos</h2>
-                <button class="add-product">
+                <button class="add-product" routerLink="/crea-productos">
                     <i class="fas fa-database"></i> Agregar Producto
                 </button>
             </div>
