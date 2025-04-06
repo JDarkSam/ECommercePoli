@@ -1,20 +1,51 @@
 .container {
-    font-family: sans-serif;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+  
+  .logo {
+    width: 100%;
+    margin-bottom: 50px;
+    margin-top: 20px;
   }
   
-  .banner-image {
-    max-width: 300px; /* Ajusta el ancho máximo según tus necesidades */
-    height: auto;
-    display: block;
-    margin: 0 auto 20px;
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 200px;
+    position: relative;
   }
+  
+  .spacer {
+    flex: 1;
+  }
+
+  .center-banner {
+    flex: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+
+  .header-buttons {
+    display: flex;
+    gap: 10px; 
+  }
+
+  .header-buttons button {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+
   
   .order-details {
     border: 1px solid #ddd;
     padding: 20px;
+    text-align: center; 
+    width: 1000px;
+    margin: 0 auto; 
   }
   
   .order-details h2 {
@@ -50,4 +81,19 @@
     cursor: pointer;
     width: 100%;
     margin-top: 20px;
+  }
+  button {
+    background-color: #00AEEF;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  button:hover {
+    background-color: #008CBA;
   }
