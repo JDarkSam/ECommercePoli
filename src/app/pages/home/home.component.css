@@ -11,6 +11,37 @@
     margin-top: 20px;
   }
 
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 200px;
+    position: relative;
+
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  .center-banner {
+    flex: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .header-buttons {
+    display: flex;
+    gap: 10px; 
+  }
+
+  .header-buttons button {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+
   .product-list {
     display: flex;
     justify-content: center;
@@ -51,34 +82,4 @@
   
   button:hover {
     background-color: #008CBA;
-  }
-
-  .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 100px 200px;
-    position: relative;
-
-  }
-
-  .spacer {
-    flex: 1;
-  }
-
-  .center-banner {
-    flex: 0;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .header-buttons {
-    display: flex;
-    gap: 10px; 
-  }
-
-  .header-buttons button {
-    padding: 8px 16px;
-    font-size: 16px;
   }

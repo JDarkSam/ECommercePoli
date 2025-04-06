@@ -14,13 +14,17 @@ import { ContactoComponent } from './pages/contacto/contacto.component';
 
 
 const routes: Routes = [
+  { path: '', component: HomeComponent },
   { path: 'registro', component: RegistroComponent },
   { path: 'login', component: LoginComponent},
-  { path: '', component: HomeComponent },
   { path: 'admin-users', component: AdminUsersComponent },  
   { path: 'admin-productos', component: AdminProductosComponent },
   { path: 'crea-productos', component: CreacionProductosComponent },
   { path: 'crea-user-admin', component: CrearUserAdminComponent },
+  { path: 'modificar-user', component: ModificacionUsersComponent },
+  { path: 'carrito-compra', component: CarritoCompraComponent },
+  { path: 'orden-compra', component: OrdenCompraComponent },
+  { path: 'contacto', component: ContactoComponent },
 ];
 
 @NgModule({
