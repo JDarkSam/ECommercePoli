@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./carrito-compra.component.css']
 })
 export class CarritoCompraComponent implements OnInit {
-  productos = [
-    { nombre: 'Altavoz JBL Flip 5', precio: 350000, cantidad: 1 },
-    { nombre: 'SSD Sandisk 1TB', precio: 465000, cantidad: 1 }
+  products = [
+    { name: 'Altavoz JBL Flip 5', price: 350000, cantidad: 1,image:'jbl_flip5.png' },
+    { name: 'SSD Sandisk 1TB', price: 465000, cantidad: 1, image:'disco_ssd.png' },
   ];
 
   constructor() { }
@@ -18,6 +18,6 @@ export class CarritoCompraComponent implements OnInit {
   }
 
   calcularTotal(): number {
-    return this.productos.reduce((total, producto) => total + producto.precio * producto.cantidad, 0);
+    return this.products.reduce((total, producto) => total + producto.price * producto.cantidad, 0);
   }
 }
