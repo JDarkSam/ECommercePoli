@@ -35,7 +35,7 @@ input {
   width: 100%;
 }
 
-.register-link, .help-link {
+.register-link {
   margin-top: 10px;
   color: #00AEEF;
   text-decoration: none;

@@ -112,7 +112,7 @@
   }
   
   .pay-button {
-    background-color: #007bff;
+    background-color: #00AEEF;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -142,5 +142,5 @@
   }
   
   button:hover {
-    background-color: #008CBA;
+    background-color: #74d3f3;
   }
