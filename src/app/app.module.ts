@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegistroComponent } from './pages/registro/registro.component';
@@ -19,6 +18,9 @@ import { AdminProductosComponent } from './pages/admin-productos/admin-productos
 import { CarritoCompraComponent } from './pages/carrito-compra/carrito-compra.component';
 import { OrdenCompraComponent } from './pages/orden-compra/orden-compra.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,7 @@ import { ContactoComponent } from './pages/contacto/contacto.component';
     AdminProductosComponent,
     CarritoCompraComponent,
     OrdenCompraComponent,
-    ContactoComponent
+    ContactoComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,8 +46,12 @@ import { ContactoComponent } from './pages/contacto/contacto.component';
     MatButtonModule,
     MatFormFieldModule,
     FormsModule,
+    HttpClientModule,
+    CommonModule
 ],
-  providers: [],
+  providers: [
+    //rovideHttpClient()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

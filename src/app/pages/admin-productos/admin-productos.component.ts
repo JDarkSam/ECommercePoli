@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
-interface Product {
-  id: number;
-  name: string;
-  price: number;
-  description: string;
-}
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
+import { ProductsService, Products } from '../../services/products.service';
 
 @Component({
   selector: 'app-admin-productos',
@@ -15,15 +11,20 @@ interface Product {
 })
 export class AdminProductosComponent implements OnInit {
 
-  products: Product[] = [
-    { id: 1, name: 'Altavoz JBL', price: 350000, description: 'Altavoz JBL Flip 5' },
-    { id: 2, name: 'SSD Sandisk 1TB', price: 230000, description: 'Disco Ssd Sandisk 1tb 2.5 Sata' },
-    // ... más productos
-  ];
-
-  constructor() { }
+  products: Products[] = [];
+  constructor(public auth: AuthService, private router: Router,private productsService: ProductsService) { }
 
   ngOnInit(): void {
+    this.productsService.getAll().subscribe((products: Products[]) => {
+          this.products = products;
+        }); 
+
   }
+
+  logout(): void {
+    this.auth.logout();
+    this.router.navigate(['/login']);
+  }
+
 
 }

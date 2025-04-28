@@ -1,6 +1,11 @@
 <div class="container">
   <div class="header">
-      <img src="banner.png" alt="Gigamarket Banner" class="banner">
+      <div class="center-banner">
+        <img src="banner.png" alt="GigaMarket" class="banner">
+      </div>   
+      <div class="header-buttons">
+        <button class="logout" (click)="logout()">  <i class="fas fa-user-plus"></i> Cerrar sesión</button>
+    </div>  
   </div>
 
   <div class="content">
@@ -16,35 +21,40 @@
       <div class="data-grid">
           <div class="title-bar">
               <h2>Mantenimiento Usuarios</h2>
+                                
               <button class="create-user" routerLink="/crea-user-admin">
                   <i class="fas fa-user-plus"></i> Crear Usuario Admin
               </button>
           </div>
 
           <table>
-              <thead>
-                  <tr>
-                      <th>Id</th>
-                      <th>Nombre Completo</th>
-                      <th>Usuario</th>
-                      <th>Email</th>
-                      <th>Role</th>
-                      <th>Acciones</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr *ngFor="let user of users">
-                      <td>{{ user.id }}</td>
-                      <td>{{ user.name }}</td>
-                      <td>{{ user.username }}</td>
-                      <td>{{ user.email }}</td>
-                      <td>{{ user.role }}</td>
-                      <td>                     
-                        <i><button routerLink="/modificar-user"><img src="editar_usuario.png" style="width: 20px;" alt="Editar Usuario"></button></i>
-                        <i><button><img src="borrar_usuario.png" style="width: 20px;" alt="Eliminar Usuario"></button></i>
-                      </td>
-                  </tr>
-              </tbody>
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Nombre Completo</th>
+                <th>Usuario</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of users">
+                <td>{{ user.id }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.user }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.role }}</td>
+                <td>
+                  <button routerLink="/modificar-user">
+                    <img src="editar_usuario.png" style="width: 20px;" alt="Editar Usuario">
+                  </button>
+                  <button>
+                    <img src="borrar_usuario.png" style="width: 20px;" alt="Eliminar Usuario">
+                  </button>
+                </td>
+              </tr>
+            </tbody>
           </table>
       </div>
   </div>

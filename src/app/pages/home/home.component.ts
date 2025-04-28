@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { ProductsService, Products } from '../../services/products.service';
+import {  Users } from '../../services/users.service';
+
 
 @Component({
   selector: 'app-home',
@@ -8,15 +12,31 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  products = [
-    { name: 'Altavoz JBL Flip 5', price: '$350.000', image: 'jbl_flip5.png' },
-    { name: 'SSD Sandisk 1TB', price: '$465.000', image: 'disco_ssd.png' },
-    { name: 'iPad Pro M4 256GB', price: '$4.299.900', image: 'ipad_pro.png' }
-  ];
+  products: Products[] = [];
 
-  constructor(private router: Router) {}
+  constructor(public auth: AuthService, private router: Router,private productsService: ProductsService) { }
+
+
+  ngOnInit(): void {
+    this.productsService.getAll().subscribe((products: Products[]) => {
+          this.products = products;
+        }); 
+
+
+  }
+
+  isUser(): boolean {
+    const userString = localStorage.getItem('currentUser');
+    const user = userString ? JSON.parse(userString) : null;
+    return user?.role === 'user';
+  }
 
   verDetalle(product: any) {
     console.log('Ver detalles de:', product);
+  }
+
+  logout(): void {
+    this.auth.logout();
+    this.router.navigate(['/login']);
   }
 }

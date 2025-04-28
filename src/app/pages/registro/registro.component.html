@@ -3,12 +3,12 @@
     <img src="logo.png" alt="Giga Market Logo">
   </div>
   <div class="form-container">
-    <input type="text" placeholder="Nombre Completo">
-    <input type="text" placeholder="Usuario">
-    <input type="email" placeholder="Email">
-    <input type="password" placeholder="Password">
+    <input type="text" placeholder="Nombre Completo"  [(ngModel)]="user.name" name="name">
+    <input type="text" placeholder="Usuario"[(ngModel)]="user.user" name="user">
+    <input type="email" placeholder="Email" [(ngModel)]="user.email" name="email">
+    <input type="password" placeholder="Password" [(ngModel)]="user.password" name="password">
     
-    <button class="register-button">Registrar</button>   
+    <button class="register-button" (click)="crearUsuario()">Registrar</button>   
     <a class="login-link" routerLink="/login">Iniciar Sesión</a>
     <a class="login-link" routerLink="/">Ir al Home</a>
   </div>

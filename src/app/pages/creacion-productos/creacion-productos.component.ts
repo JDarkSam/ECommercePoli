@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
+import { ProductsService, Products } from '../../services/products.service';
 
 @Component({
   selector: 'app-creacion-productos',
@@ -8,29 +11,58 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreacionProductosComponent implements OnInit {
 
-  nombreProducto: string = '';
-  descripcion: string = '';
-  precioUnidad: number = 0;
-  imagenProducto: any; 
+  name: string = '';
+  description: string = '';
+  price: number = 0;
+  image: string = '';
 
-  constructor() { }
+  products: Products[] = [];
+
+  constructor(public auth: AuthService, private router: Router,private productsService: ProductsService) { }
+
 
   ngOnInit(): void {
   }
 
-  onFileSelected(event: any) {
-    this.imagenProducto = event.target.files[0];
-  }
-
   crearProducto() {
-    // Aquí puedes implementar la lógica para crear el producto
-    // utilizando los valores de nombreProducto, descripcion,
-    // precioUnidad e imagenProducto.
-    console.log('Nombre del producto:', this.nombreProducto);
-    console.log('Descripción:', this.descripcion);
-    console.log('Precio unitario:', this.precioUnidad);
-    console.log('Imagen del producto:', this.imagenProducto);
+   
+    const nuevoProducto = {
+      id: '',
+      name: this.name,
+      price: this.price,
+      description: this.description,
+      image: this.image
+    };
 
-    // Puedes enviar estos datos a un servicio para guardarlos en una base de datos, por ejemplo.
+    if (!this.name || !this.description || !this.price || !this.image) {
+      console.error('Todos los campos son obligatorios.');
+      return;
+    }
+
+    this.productsService.create(nuevoProducto).subscribe(
+      (response) => {
+        console.log('Producto creado exitosamente:', response);
+      },
+      (error) => {
+        console.error('Error al crear el producto:', error);
+      }
+    );
   }
-}
+
+  logout(): void {
+    this.auth.logout();
+    this.router.navigate(['/login']);
+  }
+
+  onFileSelected(event: any) {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        this.image ="data:"+file.type+";"+e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+
+} 

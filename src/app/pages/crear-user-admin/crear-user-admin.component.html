@@ -1,6 +1,11 @@
 <div class="container">
     <div class="header">
-        <img src="banner.png" alt="Gigamarket Banner" class="banner">
+        <div class="center-banner">
+          <img src="banner.png" alt="GigaMarket" class="banner">
+        </div>   
+        <div class="header-buttons">
+          <button class="logout" (click)="logout()">  <i class="fas fa-user-plus"></i> Cerrar sesión</button>
+      </div>  
     </div>
 
     <div class="content">
@@ -18,12 +23,12 @@
 
             <div class="form-group">
                 <label for="nombreCompleto">Nombre Completo</label>
-                <input type="text" id="nombreCompleto" [(ngModel)]="user.nombreCompleto">
+                <input type="text" id="nombreCompleto" [(ngModel)]="user.name">
             </div>
 
             <div class="form-group">
                 <label for="usuario">Usuario</label>
-                <input type="text" id="usuario" [(ngModel)]="user.usuario">
+                <input type="text" id="usuario" [(ngModel)]="user.user">
             </div>
 
             <div class="form-group">
@@ -36,7 +41,7 @@
                 <input type="password" id="password" [(ngModel)]="user.password">
             </div>
 
-            <button class="register-button" (click)="registrarUsuario()">Registrar</button>
+            <button class="register-button" (click)="crearUsuario()">Registrar</button>
         </div>
     </div>
 </div>

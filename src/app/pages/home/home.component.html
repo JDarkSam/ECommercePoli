@@ -5,8 +5,9 @@
       <img src="banner.png" alt="GigaMarket" class="logo">
     </div>   
     <div class="header-buttons">
-        <button routerLink="/login">Iniciar Sesión</button>
-        <button routerLink="/registro">Registrarse</button>
+        <button id="login" routerLink="/login" *ngIf="!isUser()">Iniciar Sesión</button>
+        <button id="registro" routerLink="/registro"*ngIf="!isUser()">Registrarse</button>
+        <button id="cerrar_sesion" *ngIf="isUser()" (click)="logout()">Cerrar Sesión</button>
     </div>  
   </div>
     
@@ -19,7 +20,7 @@
         <div class="product" *ngFor="let product of products">
           <img [src]="product.image" [alt]="product.name">
           <h3>{{ product.name }}</h3>
-          <p class="price">{{ product.price }}</p>
+          <p class="price">{{ product.price | currency:'USD' }}</p>
           <button (click)="verDetalle(product)">Ver detalle</button>
         </div>
       </div>

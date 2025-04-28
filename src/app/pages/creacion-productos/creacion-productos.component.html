@@ -1,8 +1,13 @@
 <div class="container">
-  <div class="header">
-      <img src="banner.png" alt="Gigamarket Banner" class="banner">
-  </div>
-
+    <div class="header">
+        <div class="center-banner">
+          <img src="banner.png" alt="GigaMarket" class="banner">
+        </div>   
+        <div class="header-buttons">
+          <button class="logout" (click)="logout()">  <i class="fas fa-user-plus"></i> Cerrar sesión</button>
+      </div>  
+    </div>
+  
   <div class="content">
       <div class="sidebar">
           <ul>
@@ -13,32 +18,36 @@
           </ul>
       </div>
 
-      <div class="form-container">
-          <h2>Creación de Productos</h2>
-
-          <div class="form-group">
-              <label for="nombreProducto">Nombre Producto</label>
-              <input type="text" id="nombreProducto">
-          </div>
-
-          <div class="form-group">
-              <label for="descripcion">Descripción</label>
-              <input type="text" id="descripcion">
-          </div>
-
-          <div class="form-group">
-              <label for="precioUnidad">Precio Unidad</label>
-              <input type="number" id="precioUnidad">
-          </div>
-
-          <div class="form-group">
-              <label for="imagenProducto">Imagen productos</label>
-              <input type="file" id="imagenProducto">
-          </div>
-
-          <button class="examinar">Registrar</button>
-
-          <img src="URL_DE_TU_IMAGEN_ALTAVOZ" alt="Altavoz JBL" class="product-image">
-      </div>
+      <form class="form-container" (ngSubmit)="crearProducto()">
+        <div class="form-container">
+            <h2>Creación de Productos</h2>
+  
+            <div class="form-group">
+                <label for="nombreProducto">Nombre Producto</label>
+                <input type="text" id="nombreProducto" [(ngModel)]="name" name="nombreProducto">
+            </div>
+  
+            <div class="form-group">
+                <label for="descripcion">Descripción</label>
+                <input type="text" id="descripcion" [(ngModel)]="description" name="descripcion">
+            </div>
+  
+            <div class="form-group">
+                <label for="precioUnidad">Precio Unidad</label>
+                <input type="number" id="precioUnidad" [(ngModel)]="price" name="precioUnidad">
+            </div>
+  
+            <div class="form-group">
+                <label for="imagenProducto">Imagen productos</label>
+                <input type="file" id="imagenProducto" (change)="onFileSelected($event)">
+            </div>
+  
+            <button class="examinar" type="submit">Registrar</button>
+  
+            <img src="URL_DE_TU_IMAGEN_ALTAVOZ" alt="Altavoz JBL" class="product-image">
+        </div>
+      </form>
+      
+      
   </div>
 </div>
