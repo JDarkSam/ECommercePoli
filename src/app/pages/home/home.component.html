@@ -5,9 +5,13 @@
       <img src="banner.png" alt="GigaMarket" class="logo">
     </div>   
     <div class="header-buttons">
+      <div *ngIf="isUser()">
+        <p class="user-name">Bienvenido, {{ userName }}</p> <!-- Nombre del usuario -->
+        <button id="cerrar_sesion" (click)="logout()">Cerrar Sesión</button>
+      </div>
         <button id="login" routerLink="/login" *ngIf="!isUser()">Iniciar Sesión</button>
         <button id="registro" routerLink="/registro"*ngIf="!isUser()">Registrarse</button>
-        <button id="cerrar_sesion" *ngIf="isUser()" (click)="logout()">Cerrar Sesión</button>
+        <!-- <button id="cerrar_sesion" *ngIf="isUser()" (click)="logout()">Cerrar Sesión</button> -->
     </div>  
   </div>
     
@@ -21,7 +25,18 @@
           <img [src]="product.image" [alt]="product.name">
           <h3>{{ product.name }}</h3>
           <p class="price">{{ product.price | currency:'USD' }}</p>
-          <button (click)="verDetalle(product)">Ver detalle</button>
+          <button id="agregar_carro" class="product-button" *ngIf="isUser()">Agregar a Carrito</button>
+          <br>
+          <button id="ver_detalle" class="product-button" (click)="verDetalle(product)">Ver detalle</button>
         </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" *ngIf="selectedProduct">
+      <div class="modal-content">
+        <span class="close" (click)="closeModal()">&times;</span>
+        <h3>Detalles del Producto</h3>
+        <label>{{ selectedProduct.description }}</label>
       </div>
+    </div>
 </div>

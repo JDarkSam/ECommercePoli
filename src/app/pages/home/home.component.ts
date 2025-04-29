@@ -13,6 +13,8 @@ import {  Users } from '../../services/users.service';
 })
 export class HomeComponent {
   products: Products[] = [];
+  selectedProduct: Products | null = null;
+  userName: string | null = null;
 
   constructor(public auth: AuthService, private router: Router,private productsService: ProductsService) { }
 
@@ -21,7 +23,11 @@ export class HomeComponent {
     this.productsService.getAll().subscribe((products: Products[]) => {
           this.products = products;
         }); 
-
+    
+    // Obtén el nombre del usuario desde localStorage
+    const userString = localStorage.getItem('currentUser');
+    const user = userString ? JSON.parse(userString) : null;
+    this.userName = user?.name || null; 
 
   }
 
@@ -31,8 +37,12 @@ export class HomeComponent {
     return user?.role === 'user';
   }
 
-  verDetalle(product: any) {
-    console.log('Ver detalles de:', product);
+  verDetalle(product: Products): void {
+    this.selectedProduct = product; // Asigna el producto seleccionado
+  }
+
+  closeModal(): void {
+    this.selectedProduct = null; // Cierra el modal
   }
 
   logout(): void {
