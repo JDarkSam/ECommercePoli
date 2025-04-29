@@ -15,6 +15,7 @@ export class HomeComponent {
   products: Products[] = [];
   selectedProduct: Products | null = null;
   userName: string | null = null;
+  cartCount: number = 0; 
 
   constructor(public auth: AuthService, private router: Router,private productsService: ProductsService) { }
 
@@ -44,6 +45,11 @@ export class HomeComponent {
   closeModal(): void {
     this.selectedProduct = null; // Cierra el modal
   }
+
+  addToCart(): void {
+    this.cartCount++; 
+  }
+
 
   logout(): void {
     this.auth.logout();

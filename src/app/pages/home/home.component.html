@@ -8,6 +8,10 @@
       <div *ngIf="isUser()">
         <p class="user-name">Bienvenido, {{ userName }}</p> <!-- Nombre del usuario -->
         <button id="cerrar_sesion" (click)="logout()">Cerrar Sesión</button>
+        <button id="carrito" class="cart-button">
+          <img src="cart.png" alt="Carrito" class="cart-image">
+          <i class="fas fa-shopping-cart"></i> <span class="cart-count">{{ cartCount }}</span>
+        </button>
       </div>
         <button id="login" routerLink="/login" *ngIf="!isUser()">Iniciar Sesión</button>
         <button id="registro" routerLink="/registro"*ngIf="!isUser()">Registrarse</button>
@@ -25,7 +29,7 @@
           <img [src]="product.image" [alt]="product.name">
           <h3>{{ product.name }}</h3>
           <p class="price">{{ product.price | currency:'USD' }}</p>
-          <button id="agregar_carro" class="product-button" *ngIf="isUser()">Agregar a Carrito</button>
+          <button id="agregar_carro" class="product-button" *ngIf="isUser()" (click)="addToCart()">Agregar a Carrito</button>
           <br>
           <button id="ver_detalle" class="product-button" (click)="verDetalle(product)">Ver detalle</button>
         </div>

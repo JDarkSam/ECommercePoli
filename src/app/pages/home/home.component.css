@@ -123,3 +123,50 @@
     font-size: 20px;
     cursor: pointer;
   }
+
+ /* Ajusta el estilo del botón del carrito */
+.cart-button {
+  position: relative;
+  width: 50px; /* Ajusta el tamaño del botón */
+  height: 50px; /* Asegura que el botón tenga el mismo alto que el botón "Cerrar Sesión" */
+  cursor: pointer;
+  display: inline-block;
+  background-color: #00AEEF; /* Igual que el botón "Cerrar Sesión" */
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  margin-right: 10px; 
+    margin-bottom: 10px; 
+    margin-top: 10px; 
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  margin-left: 10px; /* Agrega separación del botón "Cerrar Sesión" */
+}
+
+.cart-image {
+  width: 30px; /* Agranda la imagen del carrito */
+  height: 30px;
+  object-fit: contain; /* Asegura que la imagen se ajuste correctamente */
+}
+
+.cart-count {
+  position: absolute;
+  top: 5px; /* Ajusta la posición del contador */
+  right: 5px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
+  transform: translate(50%, -50%);
+}
+
+/* Asegura que el botón "Cerrar Sesión" tenga el mismo tamaño que el botón del carrito */
+#cerrar_sesion {
+  height: 50px; /* Igual que el botón del carrito */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
