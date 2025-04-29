@@ -37,6 +37,7 @@ export class LoginComponent {
 
       } else {
         this.error = 'Usuario o contraseña incorrectos';
+        alert(this.error);
         console.log(this.error);
         this.loggedInUser = null;
         

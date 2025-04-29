@@ -17,14 +17,6 @@
       "role": "user"
     },
     {
-      "id": "dd63",
-      "user": "pepito",
-      "name": "Pepito perez",
-      "email": "pepitoperez@gmail.com",
-      "password": "123456",
-      "role": "user"
-    },
-    {
       "id": "841b",
       "user": "admin2",
       "name": "Sammy Alexander Ayra",
@@ -49,7 +41,7 @@
       "image": "disco_ssd.png"
     },
     {
-      "id": "",
+      "id": "3",
       "name": "Display Studio",
       "price": 7000000,
       "description": "Monitor 25 pulgadas",

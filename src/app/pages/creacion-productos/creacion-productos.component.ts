@@ -27,7 +27,6 @@ export class CreacionProductosComponent implements OnInit {
   crearProducto() {
    
     const nuevoProducto = {
-      id: '',
       name: this.name,
       price: this.price,
       description: this.description,
@@ -36,14 +35,17 @@ export class CreacionProductosComponent implements OnInit {
 
     if (!this.name || !this.description || !this.price || !this.image) {
       console.error('Todos los campos son obligatorios.');
+      alert('Todos los campos son obligatorios.');
       return;
     }
 
     this.productsService.create(nuevoProducto).subscribe(
       (response) => {
+        alert('Producto creado exitosamente');
         console.log('Producto creado exitosamente:', response);
       },
       (error) => {
+        alert('Error al crear el producto');
         console.error('Error al crear el producto:', error);
       }
     );

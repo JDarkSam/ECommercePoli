@@ -26,15 +26,18 @@ export class RegistroComponent {
   crearUsuario(): void {
     if (!this.user.name || !this.user.user || !this.user.email || !this.user.password) {
       console.error('Todos los campos son obligatorios.');
+      alert('Todos los campos son obligatorios.');
       return;
     }
 
     this.usersService.create(this.user).subscribe(
       (response) => {
         console.log('Usuario creado exitosamente:', response);
+        alert('Usuario creado exitosamente');
         this.router.navigate(['/login']);
       },
       (error) => {
+        alert('Error al crear el usuario');
         console.error('Error al crear el usuario:', error);
       }
     );

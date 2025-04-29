@@ -3,7 +3,7 @@ import { ApiService } from './api.service';
 import { Observable } from 'rxjs';
 
 export interface Products {
-  id: string;
+  id?: string;
   name: string;
   price: number;
   description: string;
