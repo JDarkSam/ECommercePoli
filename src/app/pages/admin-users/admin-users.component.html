@@ -49,7 +49,7 @@
                   <button routerLink="/modificar-user">
                     <img src="editar_usuario.png" style="width: 20px;" alt="Editar Usuario">
                   </button>
-                  <button>
+                  <button id="delete" (click)="user.id && deleteUser(user.id)">
                     <img src="borrar_usuario.png" style="width: 20px;" alt="Eliminar Usuario">
                   </button>
                 </td>

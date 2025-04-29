@@ -25,11 +25,23 @@ export class AdminUsersComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.loadUsers();
+
+  }
+
+  loadUsers(): void {
     this.usersService.getAll().subscribe((users: Users[]) => {
       this.users = users;
-    }); 
+    });
+  }
 
-
+  deleteUser(id: string): void {
+    if (confirm('¿Estás seguro de que deseas eliminar este usuario?')) {
+      this.usersService.delete(id).subscribe(() => {
+        alert('Usuario eliminado correctamente');
+        this.loadUsers(); 
+      });
+    }
   }
 
   logout(): void {
