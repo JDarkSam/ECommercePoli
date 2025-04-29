@@ -48,7 +48,7 @@
                         </td>
                         <td>                     
                             <i><button routerLink="/crea-productos"><img src="edit.png" style="width: 20px;" alt="Editar Usuario"></button></i>
-                            <i><button><img src="delete.png" style="width: 20px;" alt="Eliminar Usuario"></button></i>
+                            <i><button id="delete" (click)="product.id && deleteProduct(product.id)"><img src="delete.png" style="width: 20px;" alt="Eliminar Usuario"></button></i>
                         </td>
                     </tr>
                 </tbody>

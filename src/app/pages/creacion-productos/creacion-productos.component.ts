@@ -42,6 +42,7 @@ export class CreacionProductosComponent implements OnInit {
     this.productsService.create(nuevoProducto).subscribe(
       (response) => {
         alert('Producto creado exitosamente');
+        this.router.navigate(['/admin-productos']);
         console.log('Producto creado exitosamente:', response);
       },
       (error) => {

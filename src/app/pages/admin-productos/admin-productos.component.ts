@@ -15,10 +15,24 @@ export class AdminProductosComponent implements OnInit {
   constructor(public auth: AuthService, private router: Router,private productsService: ProductsService) { }
 
   ngOnInit(): void {
-    this.productsService.getAll().subscribe((products: Products[]) => {
-          this.products = products;
-        }); 
+    this.loadProducts();
+  }
 
+  loadProducts(): void {
+    this.productsService.getAll().subscribe((products: Products[]) => {
+      this.products = products;
+    });
+  }
+  deleteProduct(id: string): void {
+    if (confirm('¿Estás seguro de que deseas eliminar este producto?')) {
+      this.productsService.delete(id).subscribe(() => {
+        this.products = this.products.filter(product => product.id !== id);
+        alert('Producto eliminado exitosamente.');
+      }, error => {
+        console.error('Error al eliminar el producto:', error);
+        alert('Ocurrió un error al eliminar el producto.');
+      });
+    }
   }
 
   logout(): void {
