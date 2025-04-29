@@ -46,10 +46,10 @@
                 <td>{{ user.email }}</td>
                 <td>{{ user.role }}</td>
                 <td>
-                  <button routerLink="/modificar-user">
-                    <img src="editar_usuario.png" style="width: 20px;" alt="Editar Usuario">
+                  <button id="udpate" routerLink="/modificar-user" *ngIf="user.user !== 'admin'">
+                    <img  src="editar_usuario.png" style="width: 20px;" alt="Editar Usuario">
                   </button>
-                  <button id="delete" (click)="user.id && deleteUser(user.id)">
+                  <button id="delete" (click)="user.id && deleteUser(user.id)" *ngIf="user.user !== 'admin'" >
                     <img src="borrar_usuario.png" style="width: 20px;" alt="Eliminar Usuario">
                   </button>
                 </td>
